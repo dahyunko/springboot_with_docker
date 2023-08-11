@@ -1,0 +1,38 @@
+version: '3'
+services:
+  database:
+    image: mysql
+    container_name: mysql-root3
+    restart: always
+    ports:
+      - "3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=20200128!!
+      - MYSQL_DATABASE=asac_spring_test1
+      - MYSQL_CHARSET=utf8mb4
+      - MYSQL_COLLATION=utf8mb4_unicode_ci
+    volumes:
+      - /etc/mysql/my.cnf
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+    networks:
+      - test_network2
+
+  application:
+    build: .
+    container_name: spring-boot-crud6
+    ports:
+      - "3050:8080"
+    depends_on:
+      - database
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/asac_spring_test1?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=20200128!!
+    networks:
+      - test_network2
+
+networks: 
+  test_network2:

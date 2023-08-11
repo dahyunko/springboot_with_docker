@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>사용자 수정</title>
+</head>
+<body>
+    <h1>사용자 수정</h1>
+    <form th:action="@{/updateUser/{id}(id=${user.id})}" method="post">
+        <label for="name">NAME:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required><br>
+        
+        <!-- 다른 필드도 추가 가능 -->
+        
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>

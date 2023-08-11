@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>사용자 추가</title>
+</head>
+<body>
+    <h1>사용자 추가</h1>
+    <form th:action="@{/createUser}" method="post">
+        <label for="id">ID:</label>
+        <input type="email" id="id" name="id" required><br>
+        
+        <label for="name">NAME:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required><br>
+        
+        <!-- 다른 필드도 추가 가능 -->
+        
+        <button type="submit">추가</button>
+    </form>
+</body>
+</html>
