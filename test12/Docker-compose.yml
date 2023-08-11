@@ -7,7 +7,7 @@ services:
     ports:
       - "3309:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=20200128!!
+      - MYSQL_ROOT_PASSWORD=${properties.file.DB_password}
       - MYSQL_DATABASE=asac_spring_test1
       - MYSQL_CHARSET=utf8mb4
       - MYSQL_COLLATION=utf8mb4_unicode_ci
@@ -30,7 +30,7 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/asac_spring_test1?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=20200128!!
+      - SPRING_DATASOURCE_PASSWORD=${properties.file.DB_password}
     networks:
       - test_network2
 

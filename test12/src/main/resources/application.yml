@@ -1,10 +1,10 @@
 server:
-  port: 8080
+  port: ${properties.file.port}
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 20200128!!
-    url: jdbc:mysql://database:3306/asac_spring_test1?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    password: ${properties.file.DB_password}
+    url: jdbc:mysql://localhost:3306/asac_spring_test1?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     username: root
   devtools:
     livereload:
