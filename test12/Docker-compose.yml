@@ -2,12 +2,12 @@ version: '3'
 services:
   database:
     image: mysql
-    container_name: mysql-root3
+    container_name: mysql-root4
     restart: always
     ports:
       - "3309:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=${properties.file.DB_password}
+      - MYSQL_ROOT_PASSWORD=20200128!!
       - MYSQL_DATABASE=asac_spring_test1
       - MYSQL_CHARSET=utf8mb4
       - MYSQL_COLLATION=utf8mb4_unicode_ci
@@ -17,11 +17,11 @@ services:
       - "--character-set-server=utf8mb4"
       - "--collation-server=utf8mb4_unicode_ci"
     networks:
-      - test_network2
+      - test_network3
 
   application:
     build: .
-    container_name: spring-boot-crud6
+    container_name: spring-boot-crud7
     ports:
       - "3050:8080"
     depends_on:
@@ -30,9 +30,9 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/asac_spring_test1?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=${properties.file.DB_password}
+      - SPRING_DATASOURCE_PASSWORD=20200128!!
     networks:
-      - test_network2
+      - test_network3
 
 networks: 
-  test_network2:
+  test_network3:
