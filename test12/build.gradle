@@ -2,6 +2,11 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.2'
+	//MAVEN 저장소 이름 = NEXUS REPOSITORY
+		// - 커스텀하게 우리만의 NEXUS Repository
+		// - 왜? 사용자 자체의 커스텀 라이브러리를 만들어 빌드, 배보, 사용
+		// - Gradle에 필요한 Custom Script 혹은 plugin을 빌드, 배포
+	//Docker Image = Docker Resitory
 }
 
 group = 'com.example'
