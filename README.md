@@ -132,8 +132,6 @@
 
             
         - **mysql-root4 접속 시 로그와 terminal 접속 가능**
-            
-            ![image](https://github.com/dahyunko/springboot_with_docker/assets/101400650/65b82da7-f3a9-4d11-8542-e0d1267004ce)
 
             
             터미널로 db 조작 가능
